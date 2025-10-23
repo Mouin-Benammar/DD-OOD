@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DD-OOD — NeurIPS 2025</title>
+  <meta name="description" content="Double Descent Meets Out-of-Distribution Detection: Theoretical Insights and Empirical Analysis on the role of model complexity" />
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#94a3b8;--accent:#7dd3fc;--glass:rgba(255,255,255,0.03)}
+    *{box-sizing:border-box}
+    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;margin:0;background:linear-gradient(180deg,#071024 0%,#071224 60%);color:#e6eef8;-webkit-font-smoothing:antialiased}
+    .container{max-width:980px;margin:36px auto;padding:28px}
+    header{text-align:center;margin-bottom:24px}
+    h1{font-size:32px;margin:8px 0}
+    .authors{color:var(--muted);margin-bottom:12px}
+    .two{display:grid;grid-template-columns:1fr 300px;gap:20px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:20px;margin-top:22px;border:1px solid rgba(255,255,255,0.03)}
+    .abstract{color:#d9eef9}
+    .sidebar h3{margin-top:0}
+    .images-row{display:flex;gap:12px;margin-top:12px}
+    .images-row img{width:48%;border-radius:8px;border:1px solid rgba(255,255,255,0.05)}
+    pre.bib{background:#021129;padding:12px;border-radius:8px;color:#bfe3ff;overflow:auto}
+    .btn{background:var(--glass);border:1px solid rgba(255,255,255,0.04);padding:10px 14px;border-radius:10px;color:var(--accent);text-decoration:none;font-weight:600;margin-right:6px}
+    .btn.ghost{color:#cfeffd;background:transparent}
+    .coming{background:rgba(124,58,237,0.12);color:#c4b5fd;border:1px dashed rgba(196,181,253,0.12)}
+    footer{margin-top:28px;color:var(--muted);font-size:13px;text-align:center}
+    @media(max-width:880px){.two{grid-template-columns:1fr}.images-row{flex-direction:column}.images-row img{width:100%}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>DD-OOD</h1>
+      <div class="authors">Mouin Ben~Ammar, David Brellmann, Arturo Mendoza, Antoine Manzanera, Gianni Franchi</div>
+      <div class="authors">U2IS Lab, ENSTA Paris • Safran Tech</div>
+      <div class="meta">
+        <a class="btn" href="#pdf">Paper (PDF)</a>
+        <a class="btn" href="#bib">BibTeX</a>
+        <a class="btn coming" href="https://gitlab.com/Mouin-ben-ammar/neurips2025-DD-OOD" target="_blank">Code — coming soon</a>
+      </div>
+    </header>
+
+    <div class="two">
+      <main>
+        <div class="card">
+          <h2>Example Visualization</h2>
+          <div class="images-row">
+            <img src="images/width_wide_descent.png" alt="Width-wise double descent">
+            <img src="images/depth_wide_descent.png" alt="Depth-wise double descent">
+          </div>
+          <p class="abstract" style="margin-top:8px;text-align:center;">Example of width-wide and depth-wise double descent in OOD detection.</p>
+        </div>
+
+        <div class="card">
+          <h2>Abstract</h2>
+          <p class="abstract">Out-of-distribution (OOD) detection is essential for ensuring the reliability and safety of machine learning systems. In recent years, it has received increasing attention, particularly through post-hoc detection and training-based methods. In this paper, we focus on post-hoc OOD detection, which enables identifying OOD samples without altering the model's training procedure or objective. Our primary goal is to investigate the relationship between model capacity and its OOD detection performance. Specifically, we aim to answer the following question:
+    Does the Double Descent phenomenon manifest in post-hoc OOD detection? This question is crucial, as it can reveal whether overparameterization, which is already known to benefit generalization, can also enhance OOD detection.
+    Despite the growing interest in these topics by the classic supervised machine learning community, this intersection remains unexplored for OOD detection.
+    We empirically demonstrate that the Double Descent effect does indeed appear in post-hoc OOD detection. Furthermore, we provide theoretical insights to explain why this phenomenon emerges in such setting. Finally, we show that the overparameterized regime does not yield superior results consistently, and we propose a method to identify the optimal regime for OOD detection based on our observations.</p>
+        </div>
+
+        <div class="card">
+          <h2>Code Release Notice</h2>
+          <p class="abstract">The code will be released soon.<br/>We are currently preparing the implementation for public release to ensure clarity, correctness, and reproducibility.</p>
+        </div>
+
+        <div class="card">
+          <h3 id="pdf">Paper</h3>
+          <p><a class="btn ghost" href="#" target="_blank">Download PDF</a></p>
+        </div>
+
+        <div class="card">
+          <h3 id="bib">BibTeX</h3>
+          <pre class="bib">@article{ammar2024double,
+  title={Double Descent Meets Out-of-Distribution Detection: Theoretical Insights and Empirical Analysis on the role of model complexity},
+  author={Ammar, Mou{"i}n Ben and Brellmann, David and Mendoza, Arturo and Manzanera, Antoine and Franchi, Gianni},
+  journal={arXiv preprint arXiv:2411.02184},
+  year={2024}
+}</pre>
+        </div>
+      </main>
+
+      <aside class="sidebar">
+        <div class="card">
+          <h3>Resources</h3>
+          <ul style="color:var(--muted);padding-left:18px">
+            <li>Paper PDF (link above)</li>
+            <li>Code: <strong>coming soon</strong> — <a href="https://gitlab.com/Mouin-ben-ammar/neurips2025-DD-OOD" target="_blank">GitLab repo</a></li>
+            <li>Datasets &amp; checkpoints (to be released)</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <div>Built by U2IS Lab, ENSTA Paris &amp; Safran Tech — last updated October 2025</div>
+    </footer>
+  </div>
+</body>
+</html>
