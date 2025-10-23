@@ -17,14 +17,15 @@
     .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:20px;margin-top:22px;border:1px solid rgba(255,255,255,0.03)}
     .abstract{color:#d9eef9}
     .sidebar h3{margin-top:0}
-    .images-row{display:flex;gap:12px;margin-top:12px}
-    .images-row img{width:48%;border-radius:8px;border:1px solid rgba(255,255,255,0.05)}
+    .images-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; justify-content: center;}
+    .images-row img { width: 100%; max-width: 460px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); height: auto;}
     pre.bib{background:#021129;padding:12px;border-radius:8px;color:#bfe3ff;overflow:auto}
     .btn{background:var(--glass);border:1px solid rgba(255,255,255,0.04);padding:10px 14px;border-radius:10px;color:var(--accent);text-decoration:none;font-weight:600;margin-right:6px}
     .btn.ghost{color:#cfeffd;background:transparent}
     .coming{background:rgba(124,58,237,0.12);color:#c4b5fd;border:1px dashed rgba(196,181,253,0.12)}
     footer{margin-top:28px;color:var(--muted);font-size:13px;text-align:center}
-    @media(max-width:880px){.two{grid-template-columns:1fr}.images-row{flex-direction:column}.images-row img{width:100%}}
+    @media (min-width: 880px) { .images-row img { width: calc(50% - 6px);  }}
+
   </style>
 </head>
 <body>
