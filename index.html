@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Double Descent Meets Out-of-Distribution Detection: Theoretical Insights and Empirical Analysis on The Role of Model Complexity — NeurIPS 2025</title>
+  <title>Double Descent Meets Out-of-Distribution Detection — NeurIPS 2025</title>
   <meta name="description" content="Double Descent Meets Out-of-Distribution Detection: Theoretical Insights and Empirical Analysis on the role of model complexity" />
   <style>
   :root {
@@ -26,15 +26,16 @@
 
   /* Page wrapper */
   .container {
-    max-width: 880px;
+    max-width: 980px;
     margin: 0 auto;
     padding: 32px 24px;
   }
 
+  /* Header */
   header {
     text-align: center;
     margin-bottom: 40px;
-    max-width: 880px;
+    max-width: 980px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -42,10 +43,10 @@
   h1 {
     font-size: 38px;
     margin: 10px 0;
-    line-height: 1.2;
-    white-space: nowrap; /* prevent line breaks on wide screens */
-    overflow: hidden;
-    text-overflow: ellipsis;
+    line-height: 1.25;
+    display: inline-block;
+    max-width: 95%;
+    word-wrap: break-word;
   }
 
   .authors {
@@ -129,12 +130,13 @@
 
   /* Responsive layout */
   @media (max-width: 880px) {
-    h1 {
-      white-space: normal; /* allow wrapping on smaller screens */
-      font-size: 28px;
-    }
     .two {
       grid-template-columns: 1fr;
+    }
+    h1 {
+      font-size: 30px;
+      max-width: 100%;
+      white-space: normal;
     }
     .sidebar {
       margin-top: 20px;
