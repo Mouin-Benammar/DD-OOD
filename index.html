@@ -5,28 +5,104 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Double Descent Meets Out-of-Distribution Detection: Theoretical Insights and Empirical Analysis on The Role of Model Complexity — NeurIPS 2025</title>
   <meta name="description" content="Double Descent Meets Out-of-Distribution Detection: Theoretical Insights and Empirical Analysis on the role of model complexity" />
-  <style>
-    :root{--bg:#0f1724;--card:#0b1220;--muted:#94a3b8;--accent:#7dd3fc;--glass:rgba(255,255,255,0.03)}
-    *{box-sizing:border-box}
-    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;margin:0;background:linear-gradient(180deg,#071024 0%,#071224 60%);color:#e6eef8;-webkit-font-smoothing:antialiased}
-    .container{max-width:980px;margin:36px auto;padding:28px}
-    header{text-align:center;margin-bottom:24px}
-    h1{font-size:32px;margin:8px 0}
-    .authors{color:var(--muted);margin-bottom:12px}
-    .two{display:grid;grid-template-columns:1fr 300px;gap:20px}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:20px;margin-top:22px;border:1px solid rgba(255,255,255,0.03)}
-    .abstract{color:#d9eef9}
-    .sidebar h3{margin-top:0}
-    .images-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; justify-content: center;}
-    .images-row img { width: 100%; max-width: 460px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); height: auto;}
-    pre.bib{background:#021129;padding:12px;border-radius:8px;color:#bfe3ff;overflow:auto}
-    .btn{background:var(--glass);border:1px solid rgba(255,255,255,0.04);padding:10px 14px;border-radius:10px;color:var(--accent);text-decoration:none;font-weight:600;margin-right:6px}
-    .btn.ghost{color:#cfeffd;background:transparent}
-    .coming{background:rgba(124,58,237,0.12);color:#c4b5fd;border:1px dashed rgba(196,181,253,0.12)}
-    footer{margin-top:28px;color:var(--muted);font-size:13px;text-align:center}
-    @media (min-width: 880px) { .images-row img { width: calc(50% - 6px);  }}
+ <style>
+  :root {
+    --bg:#0f1724;
+    --card:#0b1220;
+    --muted:#94a3b8;
+    --accent:#7dd3fc;
+    --glass:rgba(255,255,255,0.03);
+  }
 
-  </style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    margin: 0;
+    background: linear-gradient(180deg,#071024 0%,#071224 60%);
+    color: #e6eef8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container { max-width: 980px; margin: 36px auto; padding: 28px; }
+  header { text-align: center; margin-bottom: 24px; }
+  h1 { font-size: 32px; margin: 8px 0; }
+  .authors { color: var(--muted); margin-bottom: 12px; }
+
+  /* ✅ Two-column layout that collapses on small screens */
+  .two {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 20px;
+  }
+
+  .card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 22px;
+    border: 1px solid rgba(255,255,255,0.03);
+  }
+
+  .abstract { color: #d9eef9; }
+  .sidebar h3 { margin-top: 0; }
+
+  /* ✅ Improved responsive image layout */
+  .images-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 12px;
+    justify-content: center;
+  }
+
+  .images-row img {
+    width: 100%;
+    max-width: 460px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.05);
+    height: auto;
+  }
+
+  .btn {
+    background: var(--glass);
+    border: 1px solid rgba(255,255,255,0.04);
+    padding: 10px 14px;
+    border-radius: 10px;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 6px;
+  }
+
+  .btn.ghost { color: #cfeffd; background: transparent; }
+  .coming { background: rgba(124,58,237,0.12); color: #c4b5fd; border: 1px dashed rgba(196,181,253,0.12); }
+
+  footer {
+    margin-top: 28px;
+    color: var(--muted);
+    font-size: 13px;
+    text-align: center;
+  }
+
+  /* ✅ Responsive adjustments */
+  @media (max-width: 880px) {
+    .two {
+      grid-template-columns: 1fr;
+    }
+    .sidebar {
+      margin-top: 20px;
+    }
+    .images-row {
+      flex-direction: column;
+      align-items: center;
+    }
+    .images-row img {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+</style>
+
 </head>
 <body>
   <div class="container">
