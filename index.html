@@ -24,14 +24,14 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ✅ Main page container */
+  /* Main page container */
   .container {
     max-width: 880px;
     margin: 0 auto;
     padding: 32px 24px;
   }
 
-  /* ✅ Header section */
+  /* Header section */
   header {
     text-align: center;
     margin-bottom: 36px;
@@ -40,6 +40,7 @@
   h1 {
     font-size: 40px;
     margin: 10px 0;
+    line-height: 1.15;
   }
 
   .authors {
@@ -53,7 +54,7 @@
     margin-top: 14px;
   }
 
-  /* ✅ Main content layout */
+  /* Main content layout */
   .two {
     display: grid;
     grid-template-columns: 1fr 280px;
@@ -72,7 +73,7 @@
 
   .sidebar h3 { margin-top: 0; }
 
-  /* ✅ Responsive image layout */
+  /* Responsive image layout */
   .images-row {
     display: flex;
     flex-wrap: wrap;
@@ -87,9 +88,10 @@
     border-radius: 8px;
     border: 1px solid rgba(255,255,255,0.05);
     height: auto;
+    display: block;
   }
 
-  /* ✅ Buttons */
+  /* Buttons / labels */
   .btn {
     background: var(--glass);
     border: 1px solid rgba(255,255,255,0.04);
@@ -99,12 +101,23 @@
     text-decoration: none;
     font-weight: 600;
     margin-right: 6px;
+    display: inline-block;
   }
 
   .btn.ghost { color: #cfeffd; background: transparent; }
   .coming { background: rgba(124,58,237,0.12); color: #c4b5fd; border: 1px dashed rgba(196,181,253,0.12); }
 
-  /* ✅ Footer */
+  /* Bib style */
+  pre.bib {
+    background:#021129;
+    padding:12px;
+    border-radius:8px;
+    color:#bfe3ff;
+    overflow:auto;
+    font-size:13px;
+  }
+
+  /* Footer */
   footer {
     margin-top: 36px;
     color: var(--muted);
@@ -112,7 +125,7 @@
     text-align: center;
   }
 
-  /* ✅ Responsive adjustments for phones/tablets */
+  /* Responsive adjustments for phones/tablets */
   @media (max-width: 880px) {
     .two {
       grid-template-columns: 1fr;
@@ -139,28 +152,25 @@
     }
   }
 </style>
-
-
 </head>
 <body>
   <div class="container">
     <header>
       <h1>Double Descent Meets Out-of-Distribution Detection: Theoretical Insights and Empirical Analysis on the role of model complexity</h1>
       <div class="authors">Mouin Ben~Ammar, David Brellmann, Arturo Mendoza, Antoine Manzanera, Gianni Franchi</div>
-      
       <div class="authors">U2IS Lab, ENSTA Paris • Safran Tech</div>
-      <div  <div
+
       <div class="meta">
         <a class="btn" href="#pdf">Paper (PDF)</a>
         <a class="btn" href="#bib">BibTeX</a>
-        <a class="btn coming" href="" target="_blank">Code — coming soon</a>
+        <!-- non-clickable styled label while code is not available -->
+        <span class="btn coming">Code — coming soon</span>
       </div>
     </header>
 
     <div class="two">
       <main>
         <div class="card">
-          <h2>  </h2>
           <div class="images-row">
             <img src="images/width_wide_descent.png" alt="Width-wise double descent">
             <img src="images/depth_wide_descent.png" alt="Depth-wise double descent">
@@ -207,7 +217,6 @@
         </div>
       </aside>
     </div>
-
 
     <footer>
       <div>Built by U2IS Lab, ENSTA Paris &amp; Safran Tech — last updated October 2025</div>
